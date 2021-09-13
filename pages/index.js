@@ -55,7 +55,8 @@ export default function Home() {
           }}
         >
           <h3 style={{ color: "white", fontSize: "2rem", textAlign: "center" }}>
-            A Decentralized Play2Earn &<br /> Stream2Earn Platform for Gamers,
+            A Decentralized Play2Earn and
+            <br /> Stream2Earn Platform for Gamers,
             <br />
             Vloggers, Creatives and Viewers
           </h3>
@@ -166,7 +167,7 @@ export default function Home() {
           <h1
             style={{
               color: "white",
-              fontSize: "clamp(7rem, 28px, 3.4rem)",
+              fontSize: "3rem",
               margin: 0,
               fontWeight: "bolder",
             }}
@@ -245,8 +246,8 @@ export default function Home() {
           <div
             style={{
               backgroundImage: "url('/tokenomics.png')",
-              backgroundPosition: "200px center",
-              backgroundSize: "80%",
+              backgroundPosition: "10px center",
+              backgroundSize: "120%",
               backgroundRepeat: "no-repeat",
               height: 350,
               width: "100%",
@@ -367,8 +368,8 @@ export default function Home() {
           <p style={{ textAlign: "left", color: "white" }}>
             Building The Community Presale ✓BSC Network Integration (bridged)
             Ethereum Network Integration (bridged) Coingecko and Coinmarketcap
-            listing Dex Listing (Pancakeswap & Uniswap) ✓Exchange Listings
-            (Kucoin & Gate.io) ✓Strategic Partnerships with creators
+            listing Dex Listing (Pancakeswap and Uniswap) ✓Exchange Listings
+            (Kucoin and Gate.io) ✓Strategic Partnerships with creators
           </p>
         </Col>
         <Col
@@ -463,21 +464,98 @@ export default function Home() {
             justifyContent: "space-evenly",
           }}
         >
-          <div className="telegram-thumbnail"></div>
-          <TwitterCircleFilled style={{ fontSize: 50, color: "#40B3E0" }} />
+          <a href="https://telegram.org">
+            <div className="telegram-thumbnail"></div>
+          </a>
+          <a href="https://twitter.com">
+            <TwitterCircleFilled style={{ fontSize: 50, color: "#40B3E0" }} />
+          </a>
         </Col>
-        <style jsx global>{`
-          .telegram-thumbnail {
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-            background-image: url("/telegram-logo.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-          }
-        `}</style>
       </Row>
+      <Row
+        gutter={[32, 32]}
+        style={{
+          width: "100%",
+          height: "auto",
+          margin: 0,
+          padding: "5% 10%",
+          backgroundColor: "black",
+        }}
+      >
+        <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }}>
+          <h1 style={{ color: "white", textAlign: "center" }}>Community</h1>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <a href="https://telegram.org" style={{ marginRight: 20 }}>
+              <div className="telegram-thumbnail-sm"></div>
+            </a>
+            <a href="https://twitter.com">
+              <TwitterCircleFilled style={{ fontSize: 30, color: "#40B3E0" }} />
+            </a>
+          </div>
+        </Col>
+        <Col xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }}>
+          <h1 style={{ color: "white", textAlign: "center" }}>Sitemap</h1>
+          <ul className="sitemap">
+            <li>
+              <a>Tokenomics</a>
+            </li>
+            <li>
+              <a>Play 2 Earn</a>
+            </li>
+            <li>
+              <a>Pre-sale</a>
+            </li>
+            <li>
+              <a>Stream 2 Earn</a>
+            </li>
+            <li>
+              <a>Roadmap</a>
+            </li>
+            <li>
+              <a>NFT Marketplace</a>
+            </li>
+          </ul>
+        </Col>
+        <Col span={24}>
+          <h3 style={{ color: "white", textAlign: "center" }}>
+            Copyright © 2021 Asgard, All rights reserved
+          </h3>
+        </Col>
+      </Row>
+      <style jsx global>{`
+        .telegram-thumbnail {
+          width: 50px;
+          height: 50px;
+          display: inline-block;
+          background-image: url("/telegram-logo.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        .telegram-thumbnail-sm {
+          width: 30px;
+          height: 30px;
+          display: inline-block;
+          background-image: url("/telegram-logo.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        .sitemap {
+          color: white;
+          list-style-type: none;
+          list-style: none;
+          text-align: center;
+          padding: 0;
+          margin: 0;
+        }
+      `}</style>
     </>
   );
 }
