@@ -1,11 +1,11 @@
-import { Col, Grid, Image, Row } from "antd";
+import { Col, Grid, Image, Row, Space } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 // import styles from "../styles/Home.modules.css";
 
 const { useBreakpoint } = Grid;
 
-export default function Home() {
+export default function Landing() {
   // decalare breakpoints
   const [isMobile, setIsMobile] = useState(false);
   const screen = useBreakpoint();
@@ -21,10 +21,10 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>SHITAN</title>
+        <title>SHITAN - Landing</title>
         <meta
           name="description"
-          content="Shitan, culture, clash, clash of culture"
+          content="Shitan, culture, clash, clash of culture, landing, landing page"
         />
         <meta charSet="utf-8" />
         <meta
@@ -45,6 +45,22 @@ export default function Home() {
           backdropFilter: "blur(4px)",
         }}
       >
+        <Col
+          xs={{ span: 2 }}
+          lg={{ span: 4 }}
+          style={{ backgroundColor: "rgba(12, 12, 12, 1)", height: "100%" }}
+        >
+          <div>
+            <dov />
+            <Space direction="vertical">
+              <img src="/lading_icons/Vector-4.png" width={24} height={24} />
+              <img src="/lading_icons/Vector-3.png" width={24} height={24} />
+              <img src="/lading_icons/Vector-2.png" width={24} height={24} />
+              <img src="/lading_icons/Vector.png" width={24} height={24} />
+              <img src="/lading_icons/Vector-1.png" width={24} height={24} />
+            </Space>
+          </div>
+        </Col>
         <Col
           span={24}
           style={{
