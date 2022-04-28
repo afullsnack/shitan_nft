@@ -91,7 +91,7 @@ export default function Home() {
             />
             <br />
             <br />
-            <a href="#" className="hero-btn">
+            <a href="/landing" className="hero-btn">
               <span>ENTER THE CLASH OF CULTURE</span>
             </a>
           </div>
