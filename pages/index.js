@@ -1,4 +1,4 @@
-import { Col, Grid, Image, Row } from "antd";
+import { Col, Grid, Row } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
@@ -9,13 +9,16 @@ export default function Home() {
   // decalare breakpoints
   const [isMobile, setIsMobile] = useState(false);
   const screen = useBreakpoint();
+
   useEffect(() => {
-    console.log(screen, "changed screens");
+    console.log(screen, "changed screens", isMobile);
     if (!screen.lg && !screen.xxl && !screen.xl && !screen.md) {
       setIsMobile(true);
     }
 
-    return () => {};
+    return () => {
+      setIsMobile(false);
+    };
   }, [screen]);
 
   return (
@@ -66,7 +69,7 @@ export default function Home() {
           <h1
             style={{
               fontFamily: "Angas",
-              fontSize: isMobile ? "4rem" : "300px",
+              fontSize: `${isMobile ? "4rem" : "10rem"}`,
               fontWeight: "400",
               color: "rgba(255, 255, 255, 1)",
               lineHeight: "200px",
@@ -89,13 +92,13 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <Image
+            {/* <Image
               src="/sh-logo-1.png"
               width={220}
               preview={true}
               style={{ position: "relative" }}
               className={"hero-img"}
-            />
+            /> */}
             <br />
             <br />
             <a href="/landing" className="hero-btn">

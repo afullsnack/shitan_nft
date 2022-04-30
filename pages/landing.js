@@ -17,7 +17,9 @@ export default function Landing() {
       setIsMobile(true);
     }
 
-    return () => {};
+    return () => {
+      setIsMobile(false);
+    };
   }, [screen]);
 
   return (
