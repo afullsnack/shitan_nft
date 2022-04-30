@@ -66,7 +66,7 @@ export default function Home() {
           <h1
             style={{
               fontFamily: "Angas",
-              fontSize: isMobile ? "4rem" : "10rem",
+              fontSize: isMobile ? "4rem" : "300px",
               fontWeight: "400",
               color: "rgba(255, 255, 255, 1)",
               lineHeight: "200px",
