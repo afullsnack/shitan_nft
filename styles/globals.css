@@ -5,10 +5,9 @@ html, body {
 
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  overflow: hidden;
+  justify-content: start;
+  align-items: flex-start;
+  overflow: scroll;
 }
 
 a {

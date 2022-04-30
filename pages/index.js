@@ -1,7 +1,7 @@
-import { Col, Grid, Row } from "antd";
+import { Col, Grid, Image, Row } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import "../styles/Home.module.scss";
+import styles from "../styles/Home.module.scss";
 
 const { useBreakpoint } = Grid;
 
@@ -33,12 +33,12 @@ export default function Home() {
         />
         <link rel="icon" href="/sh-logo-1.png" type="image/x-icon" />
       </Head>
-      <div className="page-bg"></div>
-      <div className="animation-wrapper">
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
+      <div className={styles.page_bg}></div>
+      <div className={styles.animation_wrapper}>
+        <div className={`${styles.particle} ${styles.particle_1}`}></div>
+        <div className={`${styles.particle} ${styles.particle_2}`}></div>
+        <div className={`${styles.particle} ${styles.particle_3}`}></div>
+        <div className={`${styles.particle} ${styles.particle_4}`}></div>
       </div>
 
       <Row
@@ -66,7 +66,7 @@ export default function Home() {
           <h1
             style={{
               fontFamily: "Angas",
-              fontSize: isMobile ? "10rem" : "70px",
+              fontSize: isMobile ? "4rem" : "70px",
               fontWeight: "400",
               color: "rgba(255, 255, 255, 1)",
               lineHeight: "200px",
@@ -89,13 +89,13 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            {/* <Image
+            <Image
               src="/sh-logo-1.png"
               width={220}
               preview={true}
               style={{ position: "relative" }}
               className={"hero-img"}
-            /> */}
+            />
             <br />
             <br />
             <a href="/landing" className="hero-btn">

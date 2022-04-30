@@ -2,6 +2,7 @@ import { MenuUnfoldOutlined } from "@ant-design/icons";
 import { Card, Col, Grid, Image, Menu, Row, Space } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Button from "../components/Button";
 // import styles from "../styles/Home.modules.css";
 
 const { useBreakpoint } = Grid;
@@ -12,7 +13,7 @@ export default function Landing() {
   const screen = useBreakpoint();
   useEffect(() => {
     console.log(screen, "changed screens");
-    if (screen.lg && !screen.xxl && !screen.xl && !screen.md) {
+    if (!screen.lg && !screen.xxl && !screen.xl && !screen.md) {
       setIsMobile(true);
     }
 
@@ -38,7 +39,8 @@ export default function Landing() {
       <Row
         style={{
           width: "100vw",
-          minHeight: "100vh",
+          minHeight: isMobile ? "100%" : "100vh",
+          height: "auto",
           margin: 0,
           padding: 0,
           backgroundImage:
@@ -80,7 +82,7 @@ export default function Landing() {
             <br />
             <br />
             <Space direction="vertical" size={"large"} align="center">
-              <a href="https://medium.com/@shitangames">
+              <a href="https://medium.com/@shitangames" testId="medium">
                 <Image
                   src="/landing_icons/Vector-4.png"
                   preview={false}
@@ -88,7 +90,7 @@ export default function Landing() {
                   // height={"22.57px"}
                 />
               </a>
-              <a href="https://t.co/hC14f2fHYO">
+              <a href="#" testId="telegram">
                 <Image
                   src="/landing_icons/Vector-3.png"
                   width={24}
@@ -96,19 +98,21 @@ export default function Landing() {
                   // height={"33.72px"}
                 />
               </a>
-              <a href="discord.gg/kEGVHumhbU">
+              <a href="https://discord.com/invite/kEGVHumhbU" testId="discord">
                 <Image
                   src="/landing_icons/Vector-2.png"
                   width={24}
                   preview={false}
                 />
               </a>
-              <Image
-                src="/landing_icons/Vector.png"
-                width={24}
-                preview={false}
-              />
-              <a href="https://twitter.com/Shitangames">
+              <a href="#" testId="instagram">
+                <Image
+                  src="/landing_icons/Vector.png"
+                  width={24}
+                  preview={false}
+                />
+              </a>
+              <a href="https://twitter.com/Shitangames" testId="twitter">
                 <Image
                   src="/landing_icons/Vector-1.png"
                   width={24}
@@ -139,7 +143,7 @@ export default function Landing() {
                 <h1
                   style={{
                     fontFamily: "Angas",
-                    fontSize: isMobile ? "5rem" : "35px",
+                    fontSize: isMobile ? "3rem" : "35px",
                     color: "rgba(255, 255, 255, 1)",
                     letterSpacing: "10%",
                     textAlign: "center",
@@ -177,32 +181,36 @@ export default function Landing() {
               xs={{ span: 24 }}
               lg={{ span: 12 }}
               style={{
-                height: "calc(100vh - 84px)",
+                height: isMobile ? "100%" : "calc(100vh - 84px)",
                 textAlign: "center",
                 display: "flex",
                 flexFlow: "column",
                 alignItems: "end",
                 justifyContent: "center",
+                paddingTop: 120,
+                paddingBottom: 120,
               }}
             >
-              {/* <Image
+              <Image
                 src="/sh-logo-1.png"
                 width={320}
                 preview={true}
                 style={{ position: "relative" }}
                 className={"hero-img"}
-              /> */}
+              />
             </Col>
             <Col
               xs={{ span: 24 }}
               lg={{ span: 12 }}
               style={{
-                height: "calc(100vh - 84px)",
+                height: isMobile ? "auto" : "calc(100vh - 84px)",
                 textAlign: "center",
                 display: "flex",
                 flexFlow: "column",
                 alignItems: "start",
                 justifyContent: "center",
+                paddingTop: 90,
+                paddingBottom: 90,
               }}
             >
               <h3
@@ -226,181 +234,196 @@ export default function Landing() {
               </span>
               <br />
               <br />
-              <a href="#" className="hero-btn">
-                <span>JOIN THE DISCORD SERVER</span>
-              </a>
+              <Button href={"#"} title={"JOIN THE DISCORD SERVER"} />
             </Col>
           </Row>
         </Col>
       </Row>
       <Row
-        gutter={[0, 32]}
         style={{
           width: "100vw",
           margin: 0,
-          padding: 0,
-          paddingLeft: isMobile ? "85.75px" : "105.72px",
-          paddingTop: "5%",
-          paddingBottom: "5%",
+          // paddingLeft: isMobile ? "85.75px" : "105.72px",
+          // paddingTop: "5%",
+          // paddingBottom: "5%",
           background: "rgba(232, 7, 24, 1)",
         }}
       >
-        <Col span={24}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Caudex",
-              fontWeight: "bold",
-              fontSize: "24.7px",
-              color: "white",
-            }}
+        <Col
+          xs={{ span: 2 }}
+          lg={{ span: 2 }}
+          flex="auto"
+          style={{
+            // display: "flex",
+            background: "transparent",
+            height: "inherit",
+            // borderRight: "0.945833px solid white",
+          }}
+        ></Col>
+        <Col xs={{ span: 22 }} lg={{ span: 22 }}>
+          <Row
+            gutter={[0, 32]}
+            style={{ paddingTop: "10%", paddingBottom: "10%" }}
           >
-            Multichain Metaverse Ecosystem
-          </h4>
-          <div className="dot-parent">
-            <div
-              className="dot-circle"
-              style={{ background: "white", opacity: 1 }}
-            />
-            <div className="dot-circle" />
-            <div className="dot-circle" />
-          </div>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 3 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Orbitron",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              color: "white",
-            }}
-          >
-            Ticker
-          </h4>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "rgba(188, 188, 188, 1)",
-            }}
-          >
-            $STN
-          </h4>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Orbitron",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              color: "white",
-            }}
-          >
-            Unique NFT
-          </h4>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "rgba(188, 188, 188, 1)",
-            }}
-          >
-            4 level of rarity with passive value
-          </h4>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Orbitron",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              color: "white",
-            }}
-          >
-            ShitánVerse
-          </h4>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "rgba(188, 188, 188, 1)",
-            }}
-          >
-            Unique gaming multiverse with cultural depth
-          </h4>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Orbitron",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              color: "white",
-            }}
-          >
-            Shitán Bridge
-          </h4>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "rgba(188, 188, 188, 1)",
-            }}
-          >
-            Enables transfer of digital avatars with other metaverse ecosystem
-          </h4>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 6 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Orbitron",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              color: "white",
-            }}
-          >
-            Shitán Token
-          </h4>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "rgba(188, 188, 188, 1)",
-            }}
-          >
-            Utility that can be used in multiverse ecosystem and network
-          </h4>
+            <Col span={24}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Caudex",
+                  fontWeight: "bold",
+                  fontSize: "24.7px",
+                  color: "white",
+                }}
+              >
+                Multichain Metaverse Ecosystem
+              </h4>
+              <div className="dot-parent">
+                <div
+                  className="dot-circle"
+                  style={{ background: "white", opacity: 1 }}
+                />
+                <div className="dot-circle" />
+                <div className="dot-circle" />
+              </div>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 3 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Orbitron",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  color: "white",
+                }}
+              >
+                Ticker
+              </h4>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "rgba(188, 188, 188, 1)",
+                }}
+              >
+                $STN
+              </h4>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Orbitron",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  color: "white",
+                }}
+              >
+                Unique NFT
+              </h4>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "rgba(188, 188, 188, 1)",
+                }}
+              >
+                4 level of rarity with passive value
+              </h4>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Orbitron",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  color: "white",
+                }}
+              >
+                ShitánVerse
+              </h4>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "rgba(188, 188, 188, 1)",
+                }}
+              >
+                Unique gaming multiverse with cultural depth
+              </h4>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Orbitron",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  color: "white",
+                }}
+              >
+                Shitán Bridge
+              </h4>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "rgba(188, 188, 188, 1)",
+                }}
+              >
+                Enables transfer of digital avatars with other metaverse
+                ecosystem
+              </h4>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 6 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Orbitron",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  color: "white",
+                }}
+              >
+                Shitán Token
+              </h4>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "rgba(188, 188, 188, 1)",
+                }}
+              >
+                Utility that can be used in multiverse ecosystem and network
+              </h4>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row
@@ -465,9 +488,11 @@ export default function Landing() {
               </span>
               <br />
               <br />
-              <a href="#" className="hero-btn" style={{ marginLeft: 11 }}>
-                <span>READ SHITÁNPAPER </span>
-              </a>
+              <Button
+                style={{ marginLeft: 11 }}
+                href={"#"}
+                title="READ SHITÁNPAPER"
+              />
             </Col>
             <Col
               xs={{ span: 24 }}
@@ -487,164 +512,180 @@ export default function Landing() {
         </Col>
       </Row>
       <Row
-        gutter={[16, 32]}
         style={{
           width: "100vw",
           margin: 0,
-          padding: 0,
-          paddingLeft: isMobile ? "85.75px" : "105.72px",
-          paddingTop: "5%",
-          paddingBottom: "5%",
+          // paddingLeft: isMobile ? "85.75px" : "105.72px",
+          // paddingTop: "5%",
+          // paddingBottom: "5%",
           background: "rgba(232, 7, 24, 1)",
         }}
       >
-        <Col span={24}>
-          <h3
-            style={{
-              fontFamily: "Angas",
-              fontSize: isMobile ? "2rem" : "32px",
-              color: "#0C0C0C",
-              letterSpacing: "10%",
-              textAlign: "left",
-              margin: 0,
-            }}
+        <Col
+          xs={{ span: 2 }}
+          lg={{ span: 2 }}
+          flex="auto"
+          style={{
+            // display: "flex",
+            background: "transparent",
+            height: "inherit",
+            // borderRight: "0.945833px solid white",
+          }}
+        ></Col>
+        <Col xs={{ span: 22 }} lg={{ span: 22 }}>
+          <Row
+            gutter={[16, 32]}
+            style={{ paddingTop: "10%", paddingBottom: "10%" }}
           >
-            SHITÁN<span style={{ color: "rgba(255, 255, 255, 1)" }}>path</span>{" "}
-            //
-          </h3>
-          <span style={{ color: "white", fontSize: 21 }}>
-            Please note that development is a fluid process and timeline are
-            subject to change. Any significant delays or setback would be
-            communicated to the community as early as possible. Timeline assumes
-            no major road
-          </span>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 4 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Angas",
-              fontWeight: "bold",
-              fontSize: "32px",
-              color: "white",
-            }}
-          >
-            01
-          </h4>
-          <ul
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "white",
-              listStyle: "disc",
-              marginLeft: "-25px",
-            }}
-          >
-            <li>Community growth</li>
-            <li>NFT Whitelist</li>
-            <li>NFT Launch</li>
-          </ul>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Angas",
-              fontWeight: "bold",
-              fontSize: "32px",
-              color: "white",
-            }}
-          >
-            02
-          </h4>
-          <ul
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "white",
-              listStyle: "disc",
-              marginLeft: "-25px",
-            }}
-          >
-            <li>Nft marketplace beta whitelisting</li>
-            <li>Airdrop to holders</li>
-            <li>Shitán token launch</li>
-          </ul>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Angas",
-              fontWeight: "bold",
-              fontSize: "32px",
-              color: "white",
-            }}
-          >
-            03
-          </h4>
-          <ul
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "white",
-              listStyle: "disc",
-              marginLeft: "-25px",
-            }}
-          >
-            <li>3D ingame character claim</li>
-            <li>for NFT holders</li>
-            <li>Nft marketplace beta launch</li>
-            <li>Nft Marketplace mainnet launch</li>
-            <li>Shitán game beta whitelisting</li>
-          </ul>
-        </Col>
-        <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-          <h4
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Angas",
-              fontWeight: "bold",
-              fontSize: "32px",
-              color: "white",
-            }}
-          >
-            04
-          </h4>
-          <ul
-            style={{
-              margin: 0,
-              marginBottom: 10,
-              fontFamily: "Catamaran",
-              fontWeight: "bold",
-              fontSize: "17.02px",
-              lineHeight: "27.92px",
-              color: "white",
-              listStyle: "disc",
-              marginLeft: "-25px",
-            }}
-          >
-            <li>ShitánBridge beta launch</li>
-            <li>Shitán game beta launch</li>
-            <li>Shitán game mainnet launch</li>
-            <li>Shitánverse beta whitelisting</li>
-          </ul>
+            <Col span={24} style={{ paddingRight: isMobile ? 20 : 0 }}>
+              <h3
+                style={{
+                  fontFamily: "Angas",
+                  fontSize: isMobile ? "2rem" : "32px",
+                  color: "#0C0C0C",
+                  letterSpacing: "10%",
+                  textAlign: "left",
+                  margin: 0,
+                }}
+              >
+                SHITÁN
+                <span style={{ color: "rgba(255, 255, 255, 1)" }}>path</span> //
+              </h3>
+              <span style={{ color: "white", fontSize: 21 }}>
+                Please note that development is a fluid process and timeline are
+                subject to change. Any significant delays or setback would be
+                communicated to the community as early as possible. Timeline
+                assumes no major road
+              </span>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 4 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Angas",
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  color: "white",
+                }}
+              >
+                01
+              </h4>
+              <ul
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "white",
+                  listStyle: "disc",
+                  marginLeft: "-25px",
+                }}
+              >
+                <li>Community growth</li>
+                <li>NFT Whitelist</li>
+                <li>NFT Launch</li>
+              </ul>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Angas",
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  color: "white",
+                }}
+              >
+                02
+              </h4>
+              <ul
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "white",
+                  listStyle: "disc",
+                  marginLeft: "-25px",
+                }}
+              >
+                <li>Nft marketplace beta whitelisting</li>
+                <li>Airdrop to holders</li>
+                <li>Shitán token launch</li>
+              </ul>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Angas",
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  color: "white",
+                }}
+              >
+                03
+              </h4>
+              <ul
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "white",
+                  listStyle: "disc",
+                  marginLeft: "-25px",
+                }}
+              >
+                <li>3D ingame character claim</li>
+                <li>for NFT holders</li>
+                <li>Nft marketplace beta launch</li>
+                <li>Nft Marketplace mainnet launch</li>
+                <li>Shitán game beta whitelisting</li>
+              </ul>
+            </Col>
+            <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+              <h4
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Angas",
+                  fontWeight: "bold",
+                  fontSize: "32px",
+                  color: "white",
+                }}
+              >
+                04
+              </h4>
+              <ul
+                style={{
+                  margin: 0,
+                  marginBottom: 10,
+                  fontFamily: "Catamaran",
+                  fontWeight: "bold",
+                  fontSize: "17.02px",
+                  lineHeight: "27.92px",
+                  color: "white",
+                  listStyle: "disc",
+                  marginLeft: "-25px",
+                }}
+              >
+                <li>ShitánBridge beta launch</li>
+                <li>Shitán game beta launch</li>
+                <li>Shitán game mainnet launch</li>
+                <li>Shitánverse beta whitelisting</li>
+              </ul>
+            </Col>
+          </Row>
         </Col>
       </Row>
       <Row
@@ -669,9 +710,9 @@ export default function Landing() {
           }}
         ></Col>
         <Col xs={{ span: 22 }} lg={{ span: 22 }}>
-          <Row>
+          <Row style={{ paddingTop: "10%", paddingBottom: "10%" }}>
             <Col
-              xs={{ span: 22 }}
+              xs={{ span: 24 }}
               lg={{ span: 5 }}
               style={{
                 display: "flex",
@@ -709,7 +750,7 @@ export default function Landing() {
               </span>
             </Col>
             <Col
-              xs={{ span: 22 }}
+              xs={{ span: 24 }}
               lg={{ span: 15 }}
               style={{
                 display: "flex",
@@ -729,7 +770,7 @@ export default function Landing() {
                   width: "100%",
                 }}
                 bodyStyle={{
-                  paddingLeft: 100,
+                  paddingLeft: isMobile ? 24 : 100,
                 }}
               >
                 <h3
@@ -752,40 +793,61 @@ export default function Landing() {
                 </span>
                 <br />
                 <br />
-                <Space direction="horizontal" size={40} align="center">
-                  <Image
-                    src="/landing_icons/Vector-4.png"
-                    preview={false}
-                    width={44}
-                    // height={"22.57px"}
-                  />
-                  <Image
-                    src="/landing_icons/Vector-3.png"
-                    width={44}
-                    preview={false}
-                    // height={"33.72px"}
-                  />
-                  <Image
-                    src="/landing_icons/Vector-2.png"
-                    width={44}
-                    preview={false}
-                  />
-                  <Image
-                    src="/landing_icons/Vector.png"
-                    width={24}
-                    preview={false}
-                  />
-                  <Image
-                    src="/landing_icons/Vector-1.png"
-                    width={44}
-                    preview={false}
-                  />
+                <Space direction="horizontal" size="large" align="center">
+                  <a
+                    href="https://medium.com/@shitangames"
+                    testId="medium-footer"
+                  >
+                    <Image
+                      src="/landing_icons/Vector-4.png"
+                      preview={false}
+                      width={44}
+                      // height={"22.57px"}
+                    />
+                  </a>
+                  <a href="#" testId="telegram-footer">
+                    <Image
+                      src="/landing_icons/Vector-3.png"
+                      width={44}
+                      preview={false}
+                      // height={"33.72px"}
+                    />
+                  </a>
+                  <a
+                    href="https://discord.com/invite/kEGVHumhbU"
+                    testId="discord-footer"
+                  >
+                    <Image
+                      src="/landing_icons/Vector-2.png"
+                      width={44}
+                      preview={false}
+                    />
+                  </a>
+                  <a href="#" testId="instagram-footer">
+                    <Image
+                      src="/landing_icons/Vector.png"
+                      width={24}
+                      preview={false}
+                    />
+                  </a>
+                  <a
+                    href="https://twitter.com/Shitangames"
+                    testId="twitter-footer"
+                  >
+                    <Image
+                      src="/landing_icons/Vector-1.png"
+                      width={44}
+                      preview={false}
+                    />
+                  </a>
                 </Space>
                 <br />
                 <br />
-                <a href="#" className="hero-btn" style={{ marginLeft: 11 }}>
-                  <span>EMAIL FOR PARTNERSHIP</span>
-                </a>
+                <Button
+                  href={"mailto:info@shitan.com"}
+                  title="EMAIL FOR PARTNERSHIP"
+                  style={{ marginLeft: 11 }}
+                />
                 <br />
                 <br />
               </Card>
@@ -853,32 +915,6 @@ export default function Landing() {
           animation-iteration-count: infinite;
         }
 
-        .hero-btn {
-          color: #fff;
-          background: rgba(232, 7, 24, 1);
-          font-weight: 700;
-          text-align: center;
-          text-decoration: none;
-          border: 0;
-          outline: 0;
-          border-radius: 4px;
-          font-size: 1.1rem;
-          padding: 12px 35px;
-          display: inline-block;
-          transform: skew(-21deg);
-        }
-        .hero-btn:visited {
-          color: #fff;
-        }
-        .hero-btn:hover {
-          background: #0069a8;
-          color: #fff;
-        }
-        .hero-btn > span {
-          display: inline-block;
-          transform: skew(21deg);
-        } /* Un-skew the text */
-
         // Hero img bounce animation
         @keyframes bounce {
           o% {
@@ -905,6 +941,13 @@ export default function Landing() {
         .ant-menu-horizontal:not(.ant-menu-dark)
           > .ant-menu-submenu:hover:after {
           border-bottom: 2px solid rgba(232, 7, 24, 1);
+        }
+        .ant-menu-submenu-popup > .ant-menu {
+          background-color: transparent;
+          border: 0.4px solid white;
+        }
+        .ant-menu-item-selected {
+          color: black;
         }
       `}</style>
     </div>
