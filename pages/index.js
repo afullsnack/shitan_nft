@@ -1,4 +1,4 @@
-import { Col, Grid, Row } from "antd";
+import { Col, Grid, Image, Row } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
@@ -92,13 +92,13 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            {/* <Image
+            <Image
               src="/sh-logo-1.png"
               width={220}
               preview={true}
               style={{ position: "relative" }}
               className={"hero-img"}
-            /> */}
+            />
             <br />
             <br />
             <a href="/landing" className="hero-btn">
