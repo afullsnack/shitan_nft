@@ -80,33 +80,41 @@ export default function Landing() {
             <br />
             <br />
             <Space direction="vertical" size={"large"} align="center">
-              <Image
-                src="/landing_icons/Vector-4.png"
-                preview={false}
-                width={24}
-                // height={"22.57px"}
-              />
-              <Image
-                src="/landing_icons/Vector-3.png"
-                width={24}
-                preview={false}
-                // height={"33.72px"}
-              />
-              <Image
-                src="/landing_icons/Vector-2.png"
-                width={24}
-                preview={false}
-              />
+              <a href="https://medium.com/@shitangames">
+                <Image
+                  src="/landing_icons/Vector-4.png"
+                  preview={false}
+                  width={24}
+                  // height={"22.57px"}
+                />
+              </a>
+              <a href="https://t.co/hC14f2fHYO">
+                <Image
+                  src="/landing_icons/Vector-3.png"
+                  width={24}
+                  preview={false}
+                  // height={"33.72px"}
+                />
+              </a>
+              <a href="discord.gg/kEGVHumhbU">
+                <Image
+                  src="/landing_icons/Vector-2.png"
+                  width={24}
+                  preview={false}
+                />
+              </a>
               <Image
                 src="/landing_icons/Vector.png"
                 width={24}
                 preview={false}
               />
-              <Image
-                src="/landing_icons/Vector-1.png"
-                width={24}
-                preview={false}
-              />
+              <a href="https://twitter.com/Shitangames">
+                <Image
+                  src="/landing_icons/Vector-1.png"
+                  width={24}
+                  preview={false}
+                />
+              </a>
             </Space>
           </div>
         </Col>
@@ -177,13 +185,13 @@ export default function Landing() {
                 justifyContent: "center",
               }}
             >
-              <Image
+              {/* <Image
                 src="/sh-logo-1.png"
                 width={320}
                 preview={true}
                 style={{ position: "relative" }}
                 className={"hero-img"}
-              />
+              /> */}
             </Col>
             <Col
               xs={{ span: 24 }}
@@ -473,7 +481,7 @@ export default function Landing() {
                 paddingBottom: "8%",
               }}
             >
-              <Image src="/shitanpaper-scroll-1.png" width={300} preview />
+              <Image src="/WHITEPAPER_alt.png" width={350} preview />
             </Col>
           </Row>
         </Col>

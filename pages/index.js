@@ -1,7 +1,7 @@
-import { Col, Grid, Image, Row } from "antd";
+import { Col, Grid, Row } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-// import styles from "../styles/Home.modules.css";
+import "../styles/Home.module.scss";
 
 const { useBreakpoint } = Grid;
 
@@ -11,7 +11,7 @@ export default function Home() {
   const screen = useBreakpoint();
   useEffect(() => {
     console.log(screen, "changed screens");
-    if (screen.lg && !screen.xxl && !screen.xl && !screen.md) {
+    if (!screen.lg && !screen.xxl && !screen.xl && !screen.md) {
       setIsMobile(true);
     }
 
@@ -19,7 +19,7 @@ export default function Home() {
   }, [screen]);
 
   return (
-    <div>
+    <>
       <Head>
         <title>SHITAN</title>
         <meta
@@ -33,6 +33,13 @@ export default function Home() {
         />
         <link rel="icon" href="/sh-logo-1.png" type="image/x-icon" />
       </Head>
+      <div className="page-bg"></div>
+      <div className="animation-wrapper">
+        <div className="particle particle-1"></div>
+        <div className="particle particle-2"></div>
+        <div className="particle particle-3"></div>
+        <div className="particle particle-4"></div>
+      </div>
 
       <Row
         style={{
@@ -40,8 +47,8 @@ export default function Home() {
           minHeight: "100vh",
           margin: 0,
           padding: 0,
-          backgroundImage:
-            "radial-gradient(circle at top left, rgba(240, 3, 26, .75) 5%, rgba(240, 3, 26, .65) 15%, rgba(12, 12, 12, 1) 25%)",
+          // background: "rgba(12, 12, 12, 1)",
+          background: "transparent",
           backdropFilter: "blur(4px)",
         }}
       >
@@ -66,7 +73,7 @@ export default function Home() {
               letterSpacing: "10%",
               textAlign: "center",
               position: "absolute",
-              marginTop: "10%",
+              marginTop: "5%",
             }}
           >
             SHITÁN
@@ -82,13 +89,13 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <Image
+            {/* <Image
               src="/sh-logo-1.png"
               width={220}
               preview={true}
               style={{ position: "relative" }}
               className={"hero-img"}
-            />
+            /> */}
             <br />
             <br />
             <a href="/landing" className="hero-btn">
@@ -157,6 +164,6 @@ export default function Home() {
           }
         }
       `}</style>
-    </div>
+    </>
   );
 }
