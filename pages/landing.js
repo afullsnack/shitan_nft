@@ -163,6 +163,8 @@ export default function Landing() {
                   float: "right",
                   height: 42,
                   background: "transparent",
+                  width: isMobile ? 100 : "auto",
+                  marginLeft: isMobile ? 20 : 0,
                 }}
               >
                 <Menu.Item key="home" style={{ color: "white" }}>
