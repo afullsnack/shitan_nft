@@ -1,6 +1,7 @@
 import { Col, Grid, Image, Row } from "antd";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import Button from "../components/Button";
 import styles from "../styles/Home.module.scss";
 
 const { useBreakpoint } = Grid;
@@ -34,7 +35,7 @@ export default function Home() {
           name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0"
         />
-        <link rel="icon" href="/sh-logo-1.png" type="image/x-icon" />
+        <link rel="icon" href="./sh-logo-1.png" type="image/x-icon" />
       </Head>
       <div className={styles.page_bg}></div>
       <div className={styles.animation_wrapper}>
@@ -93,31 +94,32 @@ export default function Home() {
             }}
           >
             <Image
-              src="/sh-logo-1.png"
+              src="./sh-logo-1.png"
               width={220}
-              preview={true}
+              preview={false}
               style={{ position: "relative" }}
               className={"hero-img"}
             />
             <br />
             <br />
-            <a href="/landing" className="hero-btn">
-              <span>ENTER THE CLASH OF CULTURE</span>
-            </a>
+            <Button
+              href={"./landing.html"}
+              title={"ENTER THE CLASH OF CULTURE"}
+            />
           </div>
         </Col>
       </Row>
       <style jsx global>{`
         @font-face {
           font-family: "Angas";
-          src: url("/angas-font/Angas-Rp5ze.otf") format("opentype")
+          src: url("./angas-font/Angas-Rp5ze.otf") format("opentype")
             local(Angas);
         }
 
         @font-face {
           font-family: "AngasItalic";
           font-weight: bold;
-          src: url("/angas-font/AngasItalic-1G6LM.otf") format("opentype")
+          src: url("./angas-font/AngasItalic-1G6LM.otf") format("opentype")
             local(AngasItalic);
         }
 

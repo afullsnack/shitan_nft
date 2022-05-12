@@ -35,7 +35,7 @@ export default function Landing() {
           name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0"
         />
-        <link rel="icon" href="/sh-logo-1.png" type="image/x-icon" />
+        <link rel="icon" href="./sh-logo-1.png" type="image/x-icon" />
       </Head>
 
       <Row
@@ -196,9 +196,9 @@ export default function Landing() {
               }}
             >
               <Image
-                src="/sh-logo-1.png"
+                src="./sh-logo-1.png"
                 width={320}
-                preview={true}
+                preview={false}
                 style={{ position: "relative" }}
                 className={"hero-img"}
               />
@@ -510,7 +510,7 @@ export default function Landing() {
                 paddingBottom: "8%",
               }}
             >
-              <Image src="/WHITEPAPER_alt.png" width={350} preview />
+              <Image src="./WHITEPAPER_alt.png" width={350} preview />
             </Col>
           </Row>
         </Col>
@@ -803,43 +803,43 @@ export default function Landing() {
                     testId="medium-footer"
                   >
                     <Image
-                      src="/landing_icons/Vector-4.png"
+                      src="./landing_icons/Vector-4.png"
                       preview={false}
                       width={44}
                       // height={"22.57px"}
                     />
                   </a>
-                  <a href="#" testId="telegram-footer">
+                  {/* <a href="#" testId="telegram-footer">
                     <Image
-                      src="/landing_icons/Vector-3.png"
+                      src="./landing_icons/Vector-3.png"
                       width={44}
                       preview={false}
                       // height={"33.72px"}
                     />
-                  </a>
+                  </a> */}
                   <a
                     href="https://discord.com/invite/kEGVHumhbU"
                     testId="discord-footer"
                   >
                     <Image
-                      src="/landing_icons/Vector-2.png"
+                      src="./landing_icons/Vector-2.png"
                       width={44}
                       preview={false}
                     />
                   </a>
-                  <a href="#" testId="instagram-footer">
+                  {/* <a href="#" testId="instagram-footer">
                     <Image
                       src="/landing_icons/Vector.png"
                       width={24}
                       preview={false}
                     />
-                  </a>
+                  </a> */}
                   <a
                     href="https://twitter.com/Shitangames"
                     testId="twitter-footer"
                   >
                     <Image
-                      src="/landing_icons/Vector-1.png"
+                      src="./landing_icons/Vector-1.png"
                       width={44}
                       preview={false}
                     />
@@ -863,32 +863,32 @@ export default function Landing() {
       <style jsx global>{`
         @font-face {
           font-family: "Angas";
-          src: url("/angas-font/Angas-Rp5ze.otf") format("opentype");
+          src: url("./angas-font/Angas-Rp5ze.otf") format("opentype");
           // local(Angas);
         }
 
         @font-face {
           font-family: "AngasItalic";
           font-weight: bold;
-          src: url("/angas-font/AngasItalic-1G6LM.otf") format("opentype");
+          src: url("./angas-font/AngasItalic-1G6LM.otf") format("opentype");
           // local(AngasItalic);
         }
 
         @font-face {
           font-family: "Catamaran";
           font-weight: normal;
-          src: url("/Catamaran/Catamaran-VariableFont_wght.ttf")
+          src: url("./Catamaran/Catamaran-VariableFont_wght.ttf")
               format("truetype"),
-            url("/Catamaran/static/Catamaran-Regular.ttf") format("truetype");
+            url("./Catamaran/static/Catamaran-Regular.ttf") format("truetype");
           // local(AngasItalic);
         }
 
         @font-face {
           font-family: "Orbitron";
           font-weight: normal;
-          src: url("/Orbitron/Orbitron-VariableFont_wght.ttf")
+          src: url("./Orbitron/Orbitron-VariableFont_wght.ttf")
               format("truetype"),
-            url("/Orbitron/static/Orbitron-Regular.ttf") format("truetype");
+            url("./Orbitron/static/Orbitron-Regular.ttf") format("truetype");
           // local(AngasItalic);
         }
 
