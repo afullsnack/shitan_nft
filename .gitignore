@@ -35,3 +35,5 @@ yarn-error.log*
 cypress.json
 cypress/
 /cypress/
+/shitan_website.zip
+shitan_website.zip
