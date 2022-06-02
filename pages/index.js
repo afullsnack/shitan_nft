@@ -103,7 +103,7 @@ export default function Home() {
             <br />
             <br />
             <Button
-              href={"./landing.html"}
+              href={"./landing"} // Change this back to .html when dealing with the /out/ export folder
               title={"ENTER THE CLASH OF CULTURE"}
             />
           </div>
